@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @layer components{
     .profile{
         @apply rounded-full border-[2px] border-green-600 p-[4px]
