@@ -62,7 +62,7 @@ function CommentCard(prop) {
         if(err.response.status === 403) window.alert("Only comment owner can delete comment");
         else if (err.response.status === 401) {
           window.alert("session expired.Login again");
-          navigate("/")
+          navigate("/fakebook/")
         }
         else window.alert("unknown error")
       });

@@ -28,42 +28,42 @@ function App() {
 
   const authedRouter = createBrowserRouter([
     {
-      path: "/",
+      path: "/fakebook/",
       element: <Home img={imageSrc} username={user?.username}/>,
     },
     {
-      path: "/profile",
+      path: "/fakebook/profile",
       element: <Profile img={imageSrc}/>,
     },
     {
-      path: "/friends",
+      path: "/fakebook/friends",
       element: <RightBar/>,
     },
     {
-      path: "/user/:username",
+      path: "/fakebook/user/:username",
       element: <User/>,
     },
     {
-      path: "/submit",
+      path: "/fakebook/submit",
       element: <SubmitPost/>,
     },
     {
-      path: "/edit/:postID",
+      path: "/fakebook/edit/:postID",
       element: <EditPost/>,
     },
     {
-      path: "*",
+      path: "/fakebook/*",
       element: <ErrorPage/>,
     }
   ]);
   
 const notAuthedRouter = createBrowserRouter([
   {
-    path: "/",
+    path: "/fakebook/",
     element: <Welcome />,
   },
   {
-    path: "*",
+    path: "/fakebook/*",
     element: <ErrorPage />
   }
 ]);

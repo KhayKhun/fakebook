@@ -8,7 +8,7 @@ function MenuSlide(prop) {
           withCredentials : true
         }).then(response => {
           window.alert("Logouted successfully")
-          navigate("/")
+          navigate("/fakebook/")
           window.location.reload();
         })
         .catch(err => {
@@ -18,7 +18,7 @@ function MenuSlide(prop) {
       }
   return (
     <div className='bg-white rounded-l-lg w-full p-[20px] flex flex-col gap-[20px]'>
-        <a href='/profile' className='flex gap-[10px] items-center'>
+        <a href='/fakebook/profile' className='flex gap-[10px] items-center'>
             <img src={prop?.img ? prop.img : User} className="small-img rounded-full"/>
             <p className='font-semibold'>{prop.username}</p>
         </a>

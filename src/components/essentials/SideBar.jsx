@@ -16,19 +16,19 @@ function SideBar(prop) {
     <div className='w-full h-full'>
         <ul className='flex gap-[8px] p-[10px] flex-row sm:flex-col justify-between sm:justify-start'>
             <div className='flex h-[40px]'>
-                <a href="/" className="sidebar-card">
+                <a href="/fakebook/" className="sidebar-card">
                     <img src={Home} className="tiny-img"/>
                     <p className='hidden lg:flex'>Home</p>
                 </a>
             </div>
             <div className='flex h-[40px] lg:hidden'>
-                <a href='/friends' className="sidebar-card">
+                <a href='/fakebook/friends' className="sidebar-card">
                     <img src={Friends} className="tiny-img p-0"/>
                     <p className='hidden lg:flex'>Find Users</p>
                 </a>
             </div>
             <div className='hidden sm:flex h-[40px]'>
-                <a href="/profile" className="sidebar-card">
+                <a href="/fakebook/profile" className="sidebar-card">
                     <img src={prop.img ? prop.img : User} className="tiny-img rounded-full p-0"/>
                     <p className='hidden lg:flex'>{prop.username} <span className='text-gray-600'>(My Profile)</span></p>
                 </a>

@@ -24,7 +24,7 @@ function RightBarPeopleCard(prop) {
         getUserImage();
       },[])
     return (
-    <a href={`/user/${user.username}`} className="sidebar-card p-[10px] items-center font-semibold z-0">
+    <a href={`/fakebook/user/${user.username}`} className="sidebar-card p-[10px] items-center font-semibold z-0">
         <div className='border-[3px] border-[#3287f7] rounded-full p-[3px] relative'>
             <img src={imageSrc ? imageSrc : User} className="small-img profile border-none p-0" />
             <div className='w-[15px] h-[15px] bg-green-400 rounded-full absolute bottom-[-3px] right-[-3px] border-[3px] border-gray-100'/>

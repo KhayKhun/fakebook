@@ -18,11 +18,11 @@ function SubmitPost() {
           })
           .then((response) => {
             window.alert("Posted successfully")
-            navigate('/profile');
+            navigate('/fakebook/profile');
           })
           .catch((error) => {
             console.log(error);
-            navigate("/profile");
+            navigate("/fakebook/profile");
         });
     }
 
