@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components{
+    .profile{
+        @apply rounded-full border-[2px] border-green-600 p-[4px]
+    }
+    .small-img {
+        @apply w-[40px] h-[40px]
+    }
+    .tiny-img {
+        @apply w-[26px] h-[26px]
+    }
+    .medium-img {
+        @apply w-[52px] h-[52px]
+    }
+    .large-img {
+        @apply w-[64px] h-[64px]
+    }
+    .likeNcomment{
+        @apply flex justify-center items-center bg-white hover:bg-gray-100 cursor-pointer
+    }
+    .post-username-font{
+        @apply text-black font-semibold text-lg
+    }
+    .post-date-font{
+        @apply text-gray-600 font-normal text-sm
+    }
+    .middle-component{
+        @apply bg-white p-[20px] rounded-xl shadow-sm shadow-gray-300
+    }
+    .normal-button-ratio{
+        @apply px-[11px] py-[7px] rounded-md hover:cursor-pointer shadow-sm hover:translate-y-[2px]
+    }
+    .sidebar-card{
+        @apply w-full p-[10px] flex gap-[10px] hover:bg-black sm:hover:bg-gray-200 rounded-lg
+    }
+    .side-bar-big{
+        @apply h-[90vh] mt-[10vh] w-[25vw] hidden sm:flex fixed top-0 sm:w-[10vw] lg:w-[25vw]
+    }
+    .side-bar-small{
+        @apply w-screen sm:hidden bg-gray-900
+    }
+    .relative-options{
+        @apply relative
+    }
+    .relative-options img{
+        @apply tiny-img hover:cursor-pointer
+    }
+    .relative-options ul{
+        @apply z-50 w-[100px] p-[5px] absolute right-[30px] top-[-10px] bg-gray-50 rounded-md shadow-md
+    }
+    .relative-options ul li{
+        @apply rounded-br-sm rounded-bl-sm hover:bg-gray-200 hover:cursor-pointer flex items-center text-sm p-[10px]
+    }
+    .edit-post{
+        @apply flex flex-col gap-[10px] bg-white
+    }
+    .edit-post input,textarea{
+        @apply p-[15px] bg-gray-50 shadow-inner 
+    }
+    .edit-post h2{
+        @apply m-auto 
+    }
+    .logo{
+        @apply text-2xl text-[#1877f2]
+    }
+    .welcome-form{
+        @apply flex flex-col items-center w-full gap-[8px] mt-[20px]
+    }
+    .welcome-form input{
+        @apply py-[15px] px-[25px] bg-gray-100 flex items-center w-full
+    }
+    .welcome-form h1{
+        @apply text-2xl font-semibold
+    }
+    .welcome-form button{
+        @apply py-[15px] bg-[#1877f2] hover:bg-blue-800 text-white flex items-center justify-center w-full
+    }
+}
+input:focus{
+    outline: none;
+}
+.logo{
+    font-family: 'Bakbak One', sans-serif;
+}
+.scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 30%;
+  }
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+.refresh {
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  .loading {
+    animation-name: rotate;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
