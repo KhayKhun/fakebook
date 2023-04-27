@@ -18,9 +18,8 @@ function Login() {
         if(response.status === 200) window.location.reload();
       })
       .catch((error) => {
-        console.log(error);
-        if(error.response.status === 401) window.alert("Login failed.Please check your username and password again.")
-        else setError('Unknow Error');
+        if(error?.response?.status === 401) window.alert("Login failed.Please check your username and password again.")
+        else window.alert('Unknow Error');
       });
     };
   return (
