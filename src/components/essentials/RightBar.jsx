@@ -37,7 +37,7 @@ function RightBar() {
         }
     }, [search]);
   return (
-    <div className='w-full sm:w-full h-full overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent'>
+    <div className='w-full sm:w-full h-[90vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent'>
         <ul className='flex flex-col gap-[8px] p-[10px]'>
             <div className='flex justify-center items-center bg-white rounded-full gap-[3px]'>
                 <img src={Search} className="w-[15px] h-[15px]"/>

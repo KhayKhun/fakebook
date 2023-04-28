@@ -11,7 +11,7 @@ function Header(prop) {
     setActiveMenu(!activeMenu);
   }
   return (
-    <nav className='w-full fixed top-0 z-50'>
+    <nav className='w-full fixed top-0 left-0 z-50'>
       <main className='w-full h-[10vh] bg-white shadow-sm flex justify-between items-center px-[20px]'>
       <h1 className="logo">fakebook</h1>
       <div className='flex items-center bg-gray-100 h-[80%] gap-[5px] px-[20px] sm:w-[400px] rounded-full'>
