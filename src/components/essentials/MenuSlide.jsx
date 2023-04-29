@@ -9,7 +9,6 @@ function MenuSlide(prop) {
         }).then(response => {
           window.alert("Logouted successfully")
           navigate("/fakebook/")
-          window.location.reload();
         })
         .catch(err => {
           console.log(err);

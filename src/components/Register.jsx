@@ -6,6 +6,10 @@ function Register() {
     const [registerP,setRegisterP] = useState("");
 
     function registerUser(){
+      
+      if(registerN.length <= 4 || registerN.length >= 16) window.alert("Username must be 5 to 15 characters")
+      else if(registerP.length <= 4 || registerP.length >= 16) window.alert("Password must be 5 to 15 characters")
+      else{
         axios({
           method : 'post',
           url : 'http://localhost:3001/register',
@@ -23,12 +27,13 @@ function Register() {
           if(error.response.status === 409) window.alert("Username already taken");
           else window.alert('Unknown Error');
         });
+      }
       };
   return (
     <div className='welcome-form'>
       <h1>Create a new user</h1>
       <input name='username' placeholder='username' onChange={(e)=>{setRegisterN(e.target.value)}}/>
-      <input name='password' placeholder='password' onChange={(e)=>{setRegisterP(e.target.value)}}/>
+      <input name='password' type="password" placeholder='password' onChange={(e)=>{setRegisterP(e.target.value)}}/>
       <button onClick={registerUser}>Create user</button>
     </div>
   )

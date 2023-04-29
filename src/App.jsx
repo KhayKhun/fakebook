@@ -108,7 +108,7 @@ function getUserImage(){
 
   return (
     <>
-    {Loading ? <LoadingComponent /> 
+    {Loading ? <LoadingComponent />
     : authed ? 
     <div className='bg-gray-100 p-0 m-0 overflow-x-hidden flex w-screen items-center flex-col'>
       <Header img={imageSrc} username={user.username}/>
