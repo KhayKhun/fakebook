@@ -1,5 +1,6 @@
 import React from 'react'
 import axios from 'axios';
+
 function MenuSlide(prop) {
     function Logout(){
         axios({
@@ -8,7 +9,7 @@ function MenuSlide(prop) {
           withCredentials : true
         }).then(response => {
           window.alert("Logouted successfully")
-          navigate("/fakebook/")
+          window.location.reload();
         })
         .catch(err => {
           console.log(err);

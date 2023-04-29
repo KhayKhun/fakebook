@@ -115,7 +115,7 @@ function getUserImage(){
       <div className='h-[90vh] mt-[10vh] sm:flex fixed left-0 top-0 sm:w-[10vw] lg:w-[25vw]'>
         <SideBar img={imageSrc} username={user.username}/>
       </div>
-      <div className='w-[98vw] sm:w-[90vw] md:w-[60vw] lg:w-[45vw] mt-[21vh] sm:mt-[11vh]'>
+      <div className='w-[98vw] sm:w-[90vw] min-h-screen md:w-[60vw] lg:w-[45vw] mt-[21vh] sm:mt-[11vh]'>
         <RouterProvider router={authedRouter}/>
       </div>
       <div className='hidden lg:flex w-[25vw] fixed top-[10vh] right-0'>

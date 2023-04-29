@@ -7,8 +7,8 @@ function Register() {
 
     function registerUser(){
       
-      if(registerN.length <= 4 || registerN.length >= 16) window.alert("Username must be 5 to 15 characters")
-      else if(registerP.length <= 4 || registerP.length >= 16) window.alert("Password must be 5 to 15 characters")
+      if(registerN.length <= 4 || registerN.length > 20) window.alert("Username must be 5 to 20 characters")
+      else if(registerP.length <= 4 || registerP.length > 20) window.alert("Password must be 5 to 20 characters")
       else{
         axios({
           method : 'post',
