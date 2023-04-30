@@ -1,7 +1,7 @@
 import {React,useState,useEffect} from 'react'
 import User from '../img/user.png'
 import axios from 'axios';
-import {Buffer} from 'buffer';
+
 function RightBarPeopleCard(prop) {
     const [imageSrc,setImageSrc] = useState();
     const user = prop.user
@@ -13,12 +13,13 @@ function RightBarPeopleCard(prop) {
         })
         .then((response) => {
             if(response.data.image){
-                const base64Image = Buffer.from(response.data.image, "binary").toString("base64");    
-                const dataUrl = `data:${response.data.contentType};base64,${base64Image}`;
-                setImageSrc(dataUrl);
+                setImageSrc(response.data.image);
             }
         })
-        .catch((error) => console.error(error));
+        .catch((error) => {
+          if(error.response.status == 404) return;
+          else console.log(error)
+        });
       }
       useEffect(()=>{
         getUserImage();

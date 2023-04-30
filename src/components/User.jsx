@@ -28,13 +28,7 @@ function User() {
         url : `http://localhost:3001/users/${data._id}/image`
       })
       .then((response) => {
-        // Convert the binary image data to base64
-        const base64Image = Buffer.from(response.data.image, "binary").toString("base64");
-  
-        // Construct the data URL
-        const dataUrl = `data:${response.data.contentType};base64,${base64Image}`;
-
-        setImageSrc(dataUrl);
+        if(response.data.image) setImageSrc(response.data.image);
         setLoading(false);
       })
       .catch((error) => console.error(error));
@@ -87,7 +81,7 @@ function User() {
               <div className='middle-component w-full rounded-b-none'>
                 {/* Part 1 */}
                 <div className='flex justify-between gap-[10px]'>
-                  <img src={imageSrc? imageSrc :UserImg} className='large-img profile' />
+                <a href={imageSrc}><img src={imageSrc ? imageSrc: UserImg} className='large-img profile' /></a>
                   <div className='w-full'>
                     <div className='flex justify-between w-full'>
                       <span className='font-semibold text-xl'>{data?.username}</span>

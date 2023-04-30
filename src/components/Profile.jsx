@@ -63,7 +63,7 @@ function Profile(prop) {
               <div className='middle-component w-full rounded-b-none'>
                 {/* Part 1 */}
                 <div className='flex justify-between gap-[10px]'>
-                  <img src={prop?.img ? prop.img : UserImg} className='large-img profile' />
+                  <a href={prop?.img}><img src={prop?.img ? prop.img : UserImg} className='large-img profile' /></a>
                   <div className='w-[90%]'>
                     <div className='flex justify-between w-full'>
                       <span className='font-semibold text-xl'>{data?.username}</span>

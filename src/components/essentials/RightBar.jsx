@@ -1,6 +1,5 @@
 import {React,useState,useEffect} from 'react'
 import axios from 'axios'
-import User from '../../img/user.png'
 import Search from '../../img/search.png'
 import RightBarPeopleCard from '../RightBarPeopleCard'
 
@@ -18,7 +17,7 @@ function RightBar() {
             setUsers(response.data);
         })
         .catch(err => {
-            console.log(err)
+            console.log(err);
         })
     }
     useEffect(()=>{

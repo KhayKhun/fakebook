@@ -1,7 +1,6 @@
 import {React,useState,useEffect} from 'react'
 import { createBrowserRouter , RouterProvider } from "react-router-dom";
 import axios from 'axios'
-import { Buffer } from 'buffer';
 
 //----------------------Import Components------------------------------------------
 import Header from './components/essentials/Header'
@@ -93,12 +92,13 @@ function getUserImage(){
       })
       .then((response) => {
           if(response.data.image){
-              const base64Image = Buffer.from(response.data.image, "binary").toString("base64");    
-              const dataUrl = `data:${response.data.contentType};base64,${base64Image}`;
-              setImageSrc(dataUrl);
+              setImageSrc(response.data.image);
           }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        if(error.response.status === 404) { console.log()}
+        else console.log(error);
+      });
     }
     useEffect(() => {
         if (user) {

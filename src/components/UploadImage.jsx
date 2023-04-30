@@ -1,41 +1,44 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import {React,useState,useEffect} from 'react'
+import {storage} from './firebase'
+import { ref ,uploadBytes,listAll,getDownloadURL } from 'firebase/storage'
+import {v4} from 'uuid'
+import axios from 'axios'
 
-const UploadImage = () => {
-  const [file, setFile] = useState(null);
+function UploadImage() {
+  const [imageUpload,setImageUpload] = useState();
 
-  const handleFileChange = (event) => {
-    setFile(event.target.files[0]);
-  };
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData();
-    formData.append('image', file);
-    await axios({
-        method : 'post',
-        url : 'http://localhost:3001/upload-image',
-        data : formData,
-        headers :{ 'Content-Type': 'multipart/form-data' },
-        withCredentials : true,
-      }).then(response => {
-            alert('Image uploaded successfully')
-            window.location.reload();
-      }).catch(error => {
-        console.error(error);
-        alert('Failed to upload image');
-      })
-  };
-
+    function uploadImage(){
+        if(!imageUpload) return;
+        else{
+            uploadBytes(ref(storage,`images/${imageUpload.name+v4()}`) , imageUpload) //ref indicates the path in firebase storage
+            .then(response => {
+                getDownloadURL(response.ref).then((url) => {
+                  axios({
+                      method : 'post',
+                      url : 'http://localhost:3001/upload-image',
+                      withCredentials : true,
+                      data : {
+                        imageURL : url
+                      }
+                    })
+                    .then((response) => {
+                      window.alert("Image Uploaded successfully");
+                      window.location.reload();
+                    })
+                    .catch((error) => {
+                      window.alert("Image Uploaded failed");
+                      window.location.reload();
+                  });
+                })
+            })
+        }
+    }
   return (
-    <form onSubmit={handleSubmit} className="flex w-full justify-between items-center">
-    <input id="file-upload" type="file" accept=".jpg, .jpeg, .png" onChange={handleFileChange} 
-      className="text-sm h-full"
-    />
-    <button type="submit" className='normal-button-ratio bg-[#1877f2] text-white'>Upload</button>
-  </form>
-  
-  );
-};
+    <div>
+        <input type="file" onChange={(e)=>{setImageUpload(e.target.files[0])}}/>
+        <button onClick={uploadImage}>Upload</button>
+    </div>
+  )
+}
 
-export default UploadImage;
+export default UploadImage
