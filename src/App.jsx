@@ -70,7 +70,7 @@ const notAuthedRouter = createBrowserRouter([
       setLoading(true);
         axios({
         method : 'get',
-        url : 'http://localhost:3001/user-only',
+        url : 'https://fakebook-server-khaykhun.onrender.com/user-only',
         withCredentials : true
         })
         .then((response) => {
@@ -88,7 +88,7 @@ const notAuthedRouter = createBrowserRouter([
 function getUserImage(){
       axios({
         method : 'get',
-        url : `http://localhost:3001/users/${user._id}/image`
+        url : `https://fakebook-server-khaykhun.onrender.com/users/${user._id}/image`
       })
       .then((response) => {
           if(response.data.image){
