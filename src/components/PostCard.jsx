@@ -32,9 +32,7 @@ function PostCard(prop) {
       })
       .then((response) => {
         if(response.data.image){
-            const base64Image = Buffer.from(response.data.image, "binary").toString("base64");    
-            const dataUrl = `data:${response.data.contentType};base64,${base64Image}`;
-            setImageSrc(dataUrl);
+            setImageSrc(response.data.image);
         }
       })
       .catch((error) => console.error(error));
