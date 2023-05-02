@@ -5,7 +5,7 @@ function MenuSlide(prop) {
     function Logout(){
         axios({
           method : 'post',
-          url : 'http://localhost:3001/logout',
+          url : 'https://fakebook-server-khaykhun.onrender.com/logout',
           withCredentials : true
         }).then(response => {
           window.alert("Logouted successfully")

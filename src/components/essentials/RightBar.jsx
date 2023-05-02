@@ -10,7 +10,7 @@ function RightBar() {
     function getUsers(){
         axios({
             method : 'post',
-            url : 'http://localhost:3001/get-users',
+            url : 'https://fakebook-server-khaykhun.onrender.com/get-users',
             withCredentials : true,
         })
         .then(response => {

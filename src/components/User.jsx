@@ -25,7 +25,7 @@ function User() {
     function getUserImage(){
       axios({
         method : 'get',
-        url : `http://localhost:3001/users/${data._id}/image`
+        url : `https://fakebook-server-khaykhun.onrender.com/${data._id}/image`
       })
       .then((response) => {
         if(response.data.image) setImageSrc(response.data.image);
@@ -37,7 +37,7 @@ function User() {
     function getUser(){
       axios({
         method : 'post',
-        url : 'http://localhost:3001/get-profile-or-user',
+        url : 'https://fakebook-server-khaykhun.onrender.com/get-profile-or-user',
         data : {
           username : username
         },

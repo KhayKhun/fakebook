@@ -20,7 +20,7 @@ function Profile(prop) {
     function getUser(){
       axios({
         method : 'get',
-        url : 'http://localhost:3001/user',
+        url : 'https://fakebook-server-khaykhun.onrender.com/user',
         withCredentials : true
       })
       .then((response) => {
@@ -39,7 +39,7 @@ function Profile(prop) {
     function Logout(){
       axios({
         method : 'post',
-        url : 'http://localhost:3001/logout',
+        url : 'https://fakebook-server-khaykhun.onrender.com/logout',
         withCredentials : true
       }).then(response => {
         window.alert("Logouted successfully")

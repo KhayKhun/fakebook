@@ -31,7 +31,7 @@ function CommentCard(prop) {
     function getCommenter(){
       axios({
         method : 'post',
-        url : 'http://localhost:3001/get-user-by-id',
+        url : 'https://fakebook-server-khaykhun.onrender.com/get-user-by-id',
         data : {
           userID : comment?.commenterID
         }
@@ -47,7 +47,7 @@ function CommentCard(prop) {
     function deleteComment(){
       axios({
         method : 'delete',
-        url : 'http://localhost:3001/delete-comment',
+        url : 'https://fakebook-server-khaykhun.onrender.com/delete-comment',
         data : {
           commentID : comment._id
         },

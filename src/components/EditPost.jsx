@@ -13,7 +13,7 @@ function SubmitPost() {
     function getUser(){
         axios({
           method : 'post',
-          url : 'http://localhost:3001/is-owner',
+          url : 'https://fakebook-server-khaykhun.onrender.com/is-owner',
           withCredentials : true,
           data : {
               postID : postID
@@ -35,7 +35,7 @@ function SubmitPost() {
     function getPostData(){
       axios({
         method : 'post',
-        url : 'http://localhost:3001/get-post-data',
+        url : 'https://fakebook-server-khaykhun.onrender.com/get-post-data',
         withCredentials : true,
         data : {
             postID : postID
@@ -59,7 +59,7 @@ function SubmitPost() {
     function submit(){
         axios({
             method : 'patch',
-            url : 'http://localhost:3001/submit-edited-post',
+            url : 'https://fakebook-server-khaykhun.onrender.com/submit-edited-post',
             withCredentials : true,
             data : {
                 postID : postID,

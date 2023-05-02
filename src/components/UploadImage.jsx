@@ -15,7 +15,7 @@ function UploadImage() {
                 getDownloadURL(response.ref).then((url) => {
                   axios({
                       method : 'post',
-                      url : 'http://localhost:3001/upload-image',
+                      url : 'https://fakebook-server-khaykhun.onrender.com/upload-image',
                       withCredentials : true,
                       data : {
                         imageURL : url

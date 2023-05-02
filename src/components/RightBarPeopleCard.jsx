@@ -9,7 +9,7 @@ function RightBarPeopleCard(prop) {
     function getUserImage(){
         axios({
           method : 'get',
-          url : `http://localhost:3001/users/${user._id}/image`
+          url : `https://fakebook-server-khaykhun.onrender.com/users/${user._id}/image`
         })
         .then((response) => {
             if(response.data.image){

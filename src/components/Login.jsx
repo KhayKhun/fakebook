@@ -7,7 +7,7 @@ function Login() {
     function loginUser(){
         axios({
           method : 'post',
-          url : 'http://localhost:3001/login',
+          url : 'https://fakebook-server-khaykhun.onrender.com/login',
           data : {
             username : loginN,
             password : loginP

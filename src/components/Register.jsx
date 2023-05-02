@@ -12,7 +12,7 @@ function Register() {
       else{
         axios({
           method : 'post',
-          url : 'http://localhost:3001/register',
+          url : 'https://fakebook-server-khaykhun.onrender.com/register',
           data : {
             username : registerN,
             password : registerP

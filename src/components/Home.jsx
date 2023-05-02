@@ -9,7 +9,7 @@ function Home(prop) {
     function fetchPosts(){
         axios({
           method : 'get',
-          url : 'http://localhost:3001/posts-for-home',
+          url : 'https://fakebook-server-khaykhun.onrender.com/posts-for-home',
           withCredentials : true
         })
         .then((response) => {

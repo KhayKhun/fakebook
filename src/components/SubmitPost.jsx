@@ -9,7 +9,7 @@ function SubmitPost() {
     function submit(){
         axios({
             method : 'post',
-            url : 'http://localhost:3001/submit',
+            url : 'https://fakebook-server-khaykhun.onrender.com/submit',
             withCredentials : true,
             data : {
               title : title,

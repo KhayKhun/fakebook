@@ -28,7 +28,7 @@ function PostCard(prop) {
     function getUserImage(){
       axios({
         method : 'get',
-        url : `http://localhost:3001/users/${prop.data.userID}/image`
+        url : `https://fakebook-server-khaykhun.onrender.com/users/${prop.data.userID}/image`
       })
       .then((response) => {
         if(response.data.image){
@@ -43,7 +43,7 @@ function PostCard(prop) {
     function getPostData(){
       axios({
         method : 'post',
-        url : 'http://localhost:3001/get-post-data',
+        url : 'https://fakebook-server-khaykhun.onrender.com/get-post-data',
         data : {
           postID : prop.data._id,
         },
@@ -62,7 +62,7 @@ function PostCard(prop) {
     function getIsLiked(){
       axios({
         method : 'post',
-        url : 'http://localhost:3001/is-liked',
+        url : 'https://fakebook-server-khaykhun.onrender.com/is-liked',
         data : {
           postID : prop.data._id
         },
@@ -79,7 +79,7 @@ function PostCard(prop) {
     function postLike(){
       axios({
         method : 'post',
-        url : 'http://localhost:3001/post-like',
+        url : 'https://fakebook-server-khaykhun.onrender.com/post-like',
         data : {
           postID : data.post._id,
         },
@@ -98,7 +98,7 @@ function PostCard(prop) {
     function postComment(){
         axios({
           method : 'post',
-          url : 'http://localhost:3001/post-comment',
+          url : 'https://fakebook-server-khaykhun.onrender.com/post-comment',
           data : {
             postID : data.post._id,
             comment : comment,
@@ -118,7 +118,7 @@ function PostCard(prop) {
     function deletePost(){
       axios({
         method : 'delete',
-        url : 'http://localhost:3001/delete-post',
+        url : 'https://fakebook-server-khaykhun.onrender.com/delete-post',
         data : {
           postID : data.post._id,
           ownerID : data.owner._id
