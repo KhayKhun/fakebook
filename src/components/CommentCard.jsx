@@ -16,14 +16,16 @@ function CommentCard(prop) {
   function getUserImage(){
     axios({
       method : 'get',
-      url : `http://localhost:3001/users/${comment.commenterID}/image`
+      url : `https://fakebook-server-khaykhun.onrender.com/users/${comment.commenterID}/image`
     })
     .then((response) => {
       if(response.data.image){
           setImageSrc(response.data.image);
       }
     })
-    .catch((error) => console.error(error));
+    .catch((error) => {if(error.response.status === 404) return
+    else console.log(error)
+    });
   }
 
     function getCommenter(){

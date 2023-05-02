@@ -35,7 +35,9 @@ function PostCard(prop) {
             setImageSrc(response.data.image);
         }
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {if(error.response.status === 404) return
+      else console.log(error)
+      });
     }
 
     function getPostData(){

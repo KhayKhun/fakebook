@@ -17,7 +17,7 @@ function RightBar() {
             setUsers(response.data);
         })
         .catch(err => {
-            if (err.response.status === 404) {}
+            if (err.response.status === 404) console.log("noice")
             else console.log(err);
         })
     }

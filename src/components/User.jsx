@@ -31,7 +31,9 @@ function User() {
         if(response.data.image) setImageSrc(response.data.image);
         setLoading(false);
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {if(error.response.status === 404) return
+      else console.log(error)
+      });
     }
 
     function getUser(){
