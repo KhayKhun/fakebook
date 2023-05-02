@@ -17,7 +17,8 @@ function RightBar() {
             setUsers(response.data);
         })
         .catch(err => {
-            console.log(err);
+            if (err.response.status === 404) {}
+            else console.log(err);
         })
     }
     useEffect(()=>{
