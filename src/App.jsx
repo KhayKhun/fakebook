@@ -1,5 +1,5 @@
 import {React,useState,useEffect} from 'react'
-import { createBrowserRouter , RouterProvider,HashRouter } from "react-router-dom";
+import { createHashRouter , RouterProvider,HashRouter } from "react-router-dom";
 import axios from 'axios'
 
 //----------------------Import Components------------------------------------------
@@ -19,12 +19,11 @@ function App() {
 
   const [authed,setAuthed] = useState(false);
   const [Loading,setLoading] = useState(true);
-  const [error,setError] = useState(false);
 
   const [user,setUser] = useState();
   const [imageSrc,setImageSrc] = useState("");
 
-  const authedRouter = createBrowserRouter([
+  const authedRouter = createHashRouter([
     {
       path: "/fakebook/",
       element: <Home img={imageSrc} username={user?.username}/>,
@@ -55,7 +54,7 @@ function App() {
     }
   ]);
   
-const notAuthedRouter = createBrowserRouter([
+const notAuthedRouter = createHashRouter([
   {
     path: "/fakebook/",
     element: <Welcome />,
