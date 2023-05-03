@@ -117,9 +117,7 @@ function getUserImage(){
         <SideBar img={imageSrc} username={user.username}/>
       </div>
       <div className='w-[98vw] sm:w-[90vw] min-h-screen md:w-[60vw] lg:w-[45vw] mt-[21vh] sm:mt-[11vh]'>
-        <HashRouter>
-          <RouterProvider router={authedRouter}/>
-        </HashRouter>
+        <RouterProvider router={authedRouter}/>
       </div>
       <div className='hidden lg:flex w-[25vw] fixed top-[10vh] right-0'>
         <RightBar />
@@ -127,9 +125,7 @@ function getUserImage(){
     </div>
     :
     <div>
-        <HashRouter>
-          <RouterProvider router={notAuthedRouter}/>
-        </HashRouter>
+        <RouterProvider router={notAuthedRouter}/>
     </div>}
     </>
   )
