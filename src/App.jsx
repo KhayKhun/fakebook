@@ -1,5 +1,5 @@
 import {React,useState,useEffect} from 'react'
-import { createBrowserRouter , RouterProvider } from "react-router-dom";
+import { createBrowserRouter , RouterProvider,HashRouter } from "react-router-dom";
 import axios from 'axios'
 
 //----------------------Import Components------------------------------------------
@@ -117,7 +117,9 @@ function getUserImage(){
         <SideBar img={imageSrc} username={user.username}/>
       </div>
       <div className='w-[98vw] sm:w-[90vw] min-h-screen md:w-[60vw] lg:w-[45vw] mt-[21vh] sm:mt-[11vh]'>
-        <RouterProvider router={authedRouter}/>
+        <HashRouter>
+          <RouterProvider router={authedRouter}/>
+        </HashRouter>
       </div>
       <div className='hidden lg:flex w-[25vw] fixed top-[10vh] right-0'>
         <RightBar />
@@ -125,7 +127,9 @@ function getUserImage(){
     </div>
     :
     <div>
-        <RouterProvider router={notAuthedRouter}/>
+        <HashRouter>
+          <RouterProvider router={notAuthedRouter}/>
+        </HashRouter>
     </div>}
     </>
   )
