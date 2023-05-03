@@ -153,7 +153,7 @@ function PostCard(prop) {
           <div className='flex gap-[10px]'>
             <img src={imageSrc ? imageSrc : User} className="medium-img profile"/>
             <p className='flex flex-col'>
-              <a href={`/fakebook/user/${data?.owner.username}`} className='post-username-font hover:cursor-pointer'>{data?.owner.username}</a>
+              <a href={`/user/${data?.owner.username}`} className='post-username-font hover:cursor-pointer'>{data?.owner.username}</a>
               <span className='post-date-font'>{moment(data?.owner.registerDate).format('DD MMM YYYY')}</span>
             </p>
             {data?.post.edited ? <p>edited</p> : null}
@@ -176,7 +176,7 @@ function PostCard(prop) {
                 }}
               />
               <ul className='hidden'>
-                <li><Link to={`/fakebook/edit/${data?.post._id}`}>Edit</Link></li>
+                <li><Link to={`/edit/${data?.post._id}`}>Edit</Link></li>
                 <li
                   onClick={deletePost}
                 >Delete</li>

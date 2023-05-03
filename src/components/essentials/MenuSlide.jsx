@@ -18,7 +18,7 @@ function MenuSlide(prop) {
       }
   return (
     <div className='bg-white rounded-l-lg w-full p-[20px] flex flex-col gap-[20px]'>
-        <a href='/fakebook/profile' className='flex gap-[10px] items-center'>
+        <a href='/profile' className='flex gap-[10px] items-center'>
             <img src={prop?.img ? prop.img : User} className="small-img rounded-full"/>
             <p className='font-semibold'>{prop.username}</p>
         </a>

@@ -3,7 +3,7 @@ import User from '../img/user.png';
 import {Link} from 'react-router-dom'
 function CreatePost(prop) {
   return (
-    <Link to="/fakebook/submit" className='middle-component flex flex-col gap-[10px]'>
+    <Link to="/submit" className='middle-component flex flex-col gap-[10px]'>
         <div className='flex gap-[10px]'>
             <img src={prop.img ? prop.img : User} className="medium-img profile" />
             <div className='bg-gray-100 text-gray-600 p-[10px] rounded-full w-full'>

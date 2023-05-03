@@ -68,7 +68,7 @@ function SubmitPost() {
             }
           })
           .then((response) => {
-            navigate("/fakebook/profile")
+            navigate("/profile")
           })
           .catch((error) => {
             console.log(error);

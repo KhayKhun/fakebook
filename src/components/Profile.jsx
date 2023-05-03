@@ -43,7 +43,7 @@ function Profile(prop) {
         withCredentials : true
       }).then(response => {
         window.alert("Logouted successfully")
-        navigate("/fakebook/")
+        navigate("/")
         window.location.reload();
       })
       .catch(err => {
@@ -90,7 +90,7 @@ function Profile(prop) {
                   <UploadImage />
               </div>
               
-              <a href='/fakebook/submit' className='middle-component rounded-none flex justify-between'>
+              <a href='/submit' className='middle-component rounded-none flex justify-between'>
                 <span className='w-[70%] bg-gray-100 rounded-full flex justify-center items-center p-[4px]'>What's on your mind?</span>
                 <button className='w-[27%] bg-[#1877F2] hover:bg-[#165ab3] text-white normal-button-ratio flex justify-center items-center text-sm md:text-lg'>
                     <img src={Edit} className="tiny-img"/>

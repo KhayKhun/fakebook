@@ -46,7 +46,7 @@ function User() {
       })
       .then((response) => {
         if(response.data === "owner"){
-          navigate("/fakebook/profile")
+          navigate("/profile")
         }else{
           setData(response.data.user);
           setPosts(response.data.posts)
