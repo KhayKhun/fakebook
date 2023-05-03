@@ -1,7 +1,6 @@
 import {React,useEffect,useState} from 'react'
 import axios from 'axios'
 import {Link} from 'react-router-dom'
-import {Buffer} from 'buffer';
 import moment from 'moment'
 
 import CommentCard from './CommentCard'

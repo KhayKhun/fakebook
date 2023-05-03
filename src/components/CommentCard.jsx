@@ -3,7 +3,6 @@ import moment from 'moment';
 import Dots from '../img/dots.png';
 import axios from 'axios';
 import User from '../img/user.png';
-import { Buffer } from "buffer";
 import {useNavigate} from 'react-router-dom'
 function CommentCard(prop) {
   const navigate = useNavigate();

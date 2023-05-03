@@ -6,7 +6,6 @@ import NoPostsYet from './NoPostsYet';
 import moment from 'moment';
 import UserImg from '../img/user.png';
 import Dots from '../img/dots.png';
-import { Buffer } from 'buffer';
 import ErrorPage from './essentials/ErrorPage';
 import LoadingComponent from './essentials/Loading';
 
