@@ -79,7 +79,9 @@ const notAuthedRouter = createBrowserRouter([
             setLoading(false)
         })
         .catch((error) => {
-            setLoading(false);
+          if(error.response.status === 401) console.log("not authenticated");
+          else console.log(error)
+          setLoading(false);
         });
     };
     useEffect(() => {
