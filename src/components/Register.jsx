@@ -33,7 +33,7 @@ function Register() {
     <form className='welcome-form'>
       <h1>Create a new user</h1>
       <input name='username' placeholder='username' onChange={(e)=>{setRegisterN(e.target.value)}}/>
-      <input name='password' type="password" placeholder='password' onChange={(e)=>{setRegisterP(e.target.value)}}/>
+      <input name='password' autoComplete='current-password' type="password" placeholder='password' onChange={(e)=>{setRegisterP(e.target.value)}}/>
       <button onClick={registerUser}>Create user</button>
     </form>
   )
