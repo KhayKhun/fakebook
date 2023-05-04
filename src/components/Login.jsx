@@ -23,12 +23,12 @@ function Login() {
         });
     };
   return (
-    <form className='welcome-form'>
+    <div className='welcome-form'>
       <h1>Log in user</h1>
-      <input name='username' autoComplete='username' placeholder='username' onChange={(e)=>{setLoginN(e.target.value)}}/>
-      <input name='password' autoComplete='current-password' type="password" placeholder='password' onChange={(e)=>{setLoginP(e.target.value)}}/>
+      <input name='username' placeholder='username' onChange={(e)=>{setLoginN(e.target.value)}}/>
+      <input name='password' type="password" placeholder='password' onChange={(e)=>{setLoginP(e.target.value)}}/>
       <button onClick={loginUser}>Log in</button>
-    </form>
+    </div>
   )
 }
 
