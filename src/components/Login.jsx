@@ -23,12 +23,12 @@ function Login() {
         });
     };
   return (
-    <div className='welcome-form'>
+    <form className='welcome-form'>
       <h1>Log in user</h1>
       <input name='username' placeholder='username' onChange={(e)=>{setLoginN(e.target.value)}}/>
       <input name='password' type="password" placeholder='password' onChange={(e)=>{setLoginP(e.target.value)}}/>
       <button onClick={loginUser}>Log in</button>
-    </div>
+    </form>
   )
 }
 
