@@ -1,4 +1,4 @@
-import {React,useState,useEffect} from 'react'
+import {React,useState} from 'react'
 
 import User from '../../img/user.png';
 import Home from '../../img/home.png';

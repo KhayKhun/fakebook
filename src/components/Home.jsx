@@ -4,6 +4,7 @@ import PostCard from './PostCard';
 import CreatePost from './CreatePost';
 import LoadingComponent from './essentials/Loading';
 function Home(prop) {
+
     const [posts,setPosts] = useState([]);
 
     function fetchPosts(){

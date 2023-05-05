@@ -1,6 +1,6 @@
 import {React,useEffect,useState} from 'react'
 import axios from 'axios'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import PostCard from './PostCard';
 import NoPostsYet from './NoPostsYet'
 import moment from 'moment';
@@ -63,7 +63,7 @@ function Profile(prop) {
               <div className='middle-component w-full rounded-b-none'>
                 {/* Part 1 */}
                 <div className='flex justify-between gap-[10px]'>
-                  <a href={prop?.img}><img src={prop?.img ? prop.img : UserImg} className='large-img profile' /></a>
+                  <Link to={prop?.img}><img src={prop?.img ? prop.img : UserImg} className='large-img profile' /></Link>
                   <div className='w-[90%]'>
                     <div className='flex justify-between w-full'>
                       <span className='font-semibold text-xl'>{data?.username}</span>
@@ -90,12 +90,12 @@ function Profile(prop) {
                   <UploadImage />
               </div>
               
-              <a href='/submit' className='middle-component rounded-none flex justify-between'>
+              <Link to='/submit' className='middle-component rounded-none flex justify-between'>
                 <span className='w-[70%] bg-gray-100 rounded-full flex justify-center items-center p-[4px]'>What's on your mind?</span>
                 <button className='w-[27%] bg-[#1877F2] hover:bg-[#165ab3] text-white normal-button-ratio flex justify-center items-center text-sm md:text-lg'>
                     <img src={Edit} className="tiny-img"/>
                     Create A Post</button>
-              </a>
+              </Link>
               {/* Post filter */}
               <div className='middle-component rounded-t-none mb-[7px]'>
                 <div className='flex justify-between'>

@@ -1,6 +1,6 @@
 import {React,useEffect,useState} from 'react'
 import axios from 'axios'
-import { useNavigate,useParams } from 'react-router-dom';
+import { useNavigate,useParams,Link } from 'react-router-dom';
 import PostCard from './PostCard';
 import NoPostsYet from './NoPostsYet';
 import moment from 'moment';
@@ -30,8 +30,9 @@ function User() {
         if(response.data.image) setImageSrc(response.data.image);
         setLoading(false);
       })
-      .catch((error) => {if(error.response.status === 404) return
-      else console.log(error)
+      .catch((error) => {
+        if(error.response.status === 404) return
+        else console.log(error)
       });
     }
 
@@ -59,7 +60,8 @@ function User() {
           })
         }
       }).catch(err => {
-        console.log(err);
+        if(error.response.status === 404) return
+        else console.log(error)
         setLoading(false);
         setError(true);
       });
@@ -82,7 +84,7 @@ function User() {
               <div className='middle-component w-full rounded-b-none'>
                 {/* Part 1 */}
                 <div className='flex justify-between gap-[10px]'>
-                <a href={imageSrc}><img src={imageSrc ? imageSrc: UserImg} className='large-img profile' /></a>
+                <Link to={imageSrc}><img src={imageSrc ? imageSrc: UserImg} className='large-img profile' /></Link>
                   <div className='w-full'>
                     <div className='flex justify-between w-full'>
                       <span className='font-semibold text-xl'>{data?.username}</span>

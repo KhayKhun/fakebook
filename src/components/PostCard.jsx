@@ -34,8 +34,9 @@ function PostCard(prop) {
             setImageSrc(response.data.image);
         }
       })
-      .catch((error) => {if(error.response.status === 404) return
-      else console.log(error)
+      .catch((error) => {
+        if(error.response.status === 404) return
+        else console.log(error)
       });
     }
 
@@ -55,7 +56,8 @@ function PostCard(prop) {
           setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
+        if(error.response.status === 404) return
+        else console.log(error)
       });
     }
     function getIsLiked(){
@@ -153,7 +155,7 @@ function PostCard(prop) {
           <div className='flex gap-[10px]'>
             <img src={imageSrc ? imageSrc : User} className="medium-img profile"/>
             <p className='flex flex-col'>
-              <a href={`/user/${data?.owner.username}`} className='post-username-font hover:cursor-pointer'>{data?.owner.username}</a>
+              <Link to={`/user/${data?.owner.username}`} className='post-username-font hover:cursor-pointer'>{data?.owner.username}</Link>
               <span className='post-date-font'>{moment(data?.owner.registerDate).format('DD MMM YYYY')}</span>
             </p>
             {data?.post.edited ? <p>edited</p> : null}
