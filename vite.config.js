@@ -7,10 +7,6 @@ export default defineConfig({
   plugins: [react()],
   build: {
     rollupOptions: {
-      input: {
-        main: resolve(__dirname, 'index.html'),
-        nested: resolve(__dirname, 'dist/index.html'),
-      },
       external: ['source-map-js', 'path', 'url'],
     },
   }
